@@ -23,7 +23,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
     String p =
         r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
 
-    RegExp regExp = new RegExp(p);
+    RegExp regExp =  RegExp(p);
 
     return regExp.hasMatch(em);
   }
@@ -108,7 +108,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     ),
                   ),
                 ),
-                SizedBox(height: 40), // قللنا المسافة بدل 100 لتناسب scroll
+                SizedBox(height: 40),
                 TextButton(
                   onPressed: () {
                     showErrorEmail = !isEmail(em: emailController.text);
